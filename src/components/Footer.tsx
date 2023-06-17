@@ -2,9 +2,9 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer>
-      <div>Twój stopka</div>
-    </footer>
+    <footer className="bg-white text-center p-3 mt-4">
+        <p>Komsy &copy; 2023</p>
+      </footer>
   );
 }
 
