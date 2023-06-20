@@ -3,35 +3,20 @@ import { BrowserRouter, Routes, Route, Link, } from "react-router-dom";
 import {RequireAuth} from 'react-auth-kit'
 import App from '../App';
 import Login from '../components/account/login';
+import Home from '../components/home/home';
 
-// import Home from './pages/Home';
-// import About from './pages/About';
-// import Contact from './pages/Contact';
-// import Login from './pages/Login';
-
-// function AppRouter() {
-//   return (
-//     <Router>
-//       <Switch>
-//         {/* <Route path="/" exact component={Home} />
-//         <Route path="/about" component={About} />
-//         <Route path="/contact" component={Contact} />
-//         <Route path="/login" component={Login} /> */}
-//       </Switch>
-//     </Router>
-//   );
-// }
 
 function AppRouter() {
     return (
         <BrowserRouter>
         <Routes>
+        <Route path={'/'} element={<Home/>}/>
         <Route path={'/login'} element={<Login/>}/>
-        <Route path={'/'} element={
+        {/* <Route path={'/'} element={
           <RequireAuth loginPath={'/login'}>
-            <App/>
+            <Home/>
           </RequireAuth>
-        }/>
+        }/> */}
         </Routes>
       </BrowserRouter>
         );
