@@ -20,14 +20,19 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       [event.target.name]: event.target.value
     });
 };
-
+const headers = {
+  'Content-Type': 'application/json'
+};
 const loginUser = (userData: User) => {
-  axios.post(Auth_Endpoint.Login, userData)
+  debugger;
+  axios.post(Auth_Endpoint.Login, userData, { headers })
     .then(response => {
+      debugger;
       // Obsługa sukcesu
       console.log(response.data);
     })
     .catch(error => {
+      debugger;
       // Obsługa błędu
       console.error(error);
     });
@@ -40,7 +45,19 @@ const loginUser = (userData: User) => {
 
   
     return (
-      <div className="container d-flex justify-content-center align-items-center vh-100">
+      <div className="container-fluid p-0">
+         <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div className="container">
+          <a className="navbar-brand " href="#">Komsy</a>
+
+          <div className="navbar-nav ms-auto">
+            <a className="btn btn-primary" href="#">Zarejestruj się</a>
+          </div>
+          
+          
+        </div>
+      </nav>
+      <div className="d-flex justify-content-center align-items-center pt-4 ">
       <form className="card p-4" onSubmit={handleSubmit}>
         <h2 className="text-center mb-4">Logowanie</h2>
         <div className="mb-3">
@@ -62,6 +79,7 @@ const loginUser = (userData: User) => {
         </div>
         <button type="submit" className="btn btn-primary">Zaloguj</button>
       </form>
+      </div>
     </div>
             
     )
