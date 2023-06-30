@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Auth_Endpoint } from '../../Common/ApiConfig';
+import { useTranslation } from 'react-i18next';
+import LanguageSelector from '../LanguageSelector';
 
 interface User {
   email: string;
@@ -8,7 +10,8 @@ interface User {
 }
 
 const Login: React.FC = () => {
- 
+  const { t } = useTranslation();
+
   const [user, setUser] = useState<User>({
     email: '',
     password: ''
@@ -49,9 +52,9 @@ const loginUser = (userData: User) => {
          <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div className="container">
           <a className="navbar-brand " href="#">Komsy</a>
-
+            <LanguageSelector />
           <div className="navbar-nav ms-auto">
-            <a className="btn btn-primary" href="#">Zarejestruj się</a>
+            <a className="btn btn-primary" href="#"> {t('signin')}</a>
           </div>
           
           
