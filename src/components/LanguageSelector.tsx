@@ -11,8 +11,8 @@ const LanguageSelector: React.FC = () => {
 
   return (
     <select onChange={handleChangeLanguage}>
+      <option value="pl" >Polish</option>
       <option value="en">English</option>
-      <option value="pl">Polish</option>
     </select>
   );
 };

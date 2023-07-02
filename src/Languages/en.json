@@ -1,4 +1,9 @@
 {
-    "signin": "Sign In"
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "signout": "Sign Out",
+    "email":    "Email",
+    "password": "Hasło"
+
 }
 

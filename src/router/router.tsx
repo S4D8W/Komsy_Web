@@ -4,7 +4,8 @@ import {RequireAuth} from 'react-auth-kit'
 import App from '../App';
 import Login from '../components/account/login';
 import Home from '../components/home/home';
-
+import SignUp from '../components/account/SignUp';
+import Dashboard from '../components/dashboard/Dashboard';
 
 function AppRouter() {
     return (
@@ -12,11 +13,16 @@ function AppRouter() {
         <Routes>
         <Route path={'/'} element={<Home/>}/>
         <Route path={'/login'} element={<Login/>}/>
-        {/* <Route path={'/'} element={
+        <Route path={'/Signup'} element={<SignUp/>}/>
+        
+        
+        <Route path={'/Dashboard'} element={
           <RequireAuth loginPath={'/login'}>
-            <Home/>
+            <Dashboard/>
           </RequireAuth>
-        }/> */}
+        }/>
+
+
         </Routes>
       </BrowserRouter>
         );

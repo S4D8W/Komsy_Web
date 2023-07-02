@@ -1,3 +1,10 @@
 {
-    "signin": "zaloguj się"
+    "signin": "Zaloguj się",
+    "signup": "Zarejestruj się",
+    "signout": "wyloguj się",
+    "email":    "Adres e-mail",
+    "password": "Hasło",
+    "FirstName": "Imię",
+    "LastName": "Nazwisko"
+
 }

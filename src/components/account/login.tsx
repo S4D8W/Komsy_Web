@@ -56,7 +56,7 @@ const Login: React.FC = () => {
           <a className="navbar-brand " href="#">Komsy</a>
           <LanguageSelector />
           <div className="navbar-nav ms-auto">
-            <a className="btn btn-primary" href="#">{t('signin')}</a>
+            <a className="btn btn-primary" href="/Signup">{t('signup')}</a>
           </div>
         </div>
       </nav>
@@ -84,7 +84,10 @@ const Login: React.FC = () => {
             />
           </div>
           <button type="submit" className="btn btn-primary">Zaloguj</button>
-          {isInvalidCredentials && <div className="alert alert-danger mt-2">Nieprawidłowy adres e-mail lub hasło</div>}
+          {isInvalidCredentials && 
+            <div className="alert alert-danger mt-2">Nieprawidłowy adres e-mail lub hasło</div>
+          
+          }
         </form>
       </div>
     </div>

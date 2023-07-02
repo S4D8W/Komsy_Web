@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           cookieSecure={false}
         >
     <AppRouter />
-    <App />
+   
     </AuthProvider>
     </I18nextProvider>
   </React.StrictMode>,
