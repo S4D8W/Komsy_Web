@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Auth_Endpoint } from '../../Common/ApiConfig';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from '../LanguageSelector';
+import { useSignIn } from "react-auth-kit";
 
 interface User {
   email: string;
@@ -10,8 +11,9 @@ interface User {
 }
 
 const Login: React.FC = () => {
+  
   const { t } = useTranslation();
-
+  const signIn = useSignIn();
   const [user, setUser] = useState<User>({
     email: '',
     password: ''
@@ -34,8 +36,21 @@ const Login: React.FC = () => {
     setIsInvalidCredentials(false);
     axios.post(Auth_Endpoint.Login, userData, { headers })
       .then(response => {
+        
         // Obsługa sukcesu
-        console.log(response.data);
+        signIn({
+          token: response.data.token,
+          tokenType: "Bearer",
+          expiresIn: 3600000,
+          authState: {
+            email: response.data.user.email,
+            userId: response.data.uId,
+            firstName: response.data.firstName,
+            lastName: response.data.lastName
+
+          }
+        })
+        window.location.href = "/Dashboard";
       })
       .catch(error => {
         setIsInvalidCredentials(true);

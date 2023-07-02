@@ -16,12 +16,12 @@ function Layout({ children }: LayoutProps) {
       <div className="container-fluid ">
         <div className="row p-2">
          
-          <div className="col-lg-2 ">
+          <div className="col-lg-3 col-md-4 ">
             <Sidebar />
-            </div>
-            <div className="col-lg-10">
-           <main>{children}</main>
           </div>
+            
+           <main className='main col-lg-6 col-md-8'>{children}</main>
+          
       
         </div>
       
