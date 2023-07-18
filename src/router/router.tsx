@@ -1,7 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Link, } from "react-router-dom";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import {RequireAuth} from 'react-auth-kit'
-import App from '../App';
 import Login from '../components/account/login';
 import Home from '../components/home/home';
 import SignUp from '../components/account/SignUp';

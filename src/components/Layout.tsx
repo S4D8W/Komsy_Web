@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import  { ReactNode } from 'react';
 import Header from './header';
 import Sidebar from './sidebar';
 import 'bootstrap/dist/css/bootstrap.min.css';
